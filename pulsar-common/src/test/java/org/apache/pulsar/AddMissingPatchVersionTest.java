@@ -18,6 +18,8 @@
  */
 package org.apache.pulsar;
 
+import java.util.*;
+
 import org.apache.pulsar.PulsarVersion;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -42,5 +44,15 @@ public class AddMissingPatchVersionTest {
 
         // Non-fixable versions get returned as-is
         Assert.assertEquals(PulsarVersion.fixVersionString("1"), "1");
+    }
+    @Test
+    public void mytest()
+    {
+        HashSet<Object> test = new HashSet<>();
+        test.add(null);
+        test.add("123 ");
+        Iterator iter = test.iterator();
+        iter.next();
+        System.out.println(((String)(iter.next())).trim()); // if iter.next() is null, will throw NPE
     }
 }
